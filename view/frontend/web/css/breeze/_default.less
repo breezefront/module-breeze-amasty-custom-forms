@@ -1,0 +1,9 @@
+& when (@critical) {
+    @import 'Amasty_Customform::css/source/_module.less';
+}
+
+& when not (@critical) {
+    .amcform-popup-block {
+        z-index: 900;
+    }
+}
