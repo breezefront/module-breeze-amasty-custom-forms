@@ -5,12 +5,12 @@ define([
     'use strict';
 
     $.ui = $.ui || {};
-    $.ui.tabs = (settings, el) => {
+    $.ui.tabs = $.ui.tabs || ((settings, el) => {
         $.extend(settings, {
-            collapsibleElement: '[id]',
-            header: 'ul > li, ol > li',
-            content: '[id]'
+            collapsibleElement: '> ul > li, > ol > li',
+            content: '[id]',
+            tablist: '> ul'
         });
         tabs(settings, el);
-    };
+    });
 });
