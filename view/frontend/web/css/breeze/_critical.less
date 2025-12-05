@@ -1,3 +1,24 @@
 .amcform-popup-block {
     display: none;
 }
+
+[data-amcform-js="multi-page"] {
+    // Prevent CLS caused by onReveal initialization
+    > div:not([aria-hidden]) {
+        display: none;
+    }
+}
+
+.default.amform-form .fields .amform-layout-two,
+.default.amform-form .fields .amform-layout-one,
+.amform-form .fieldset .fields .amform-layout-two,
+.amform-form .fieldset .fields .amform-layout-three {
+    margin-right: 0;
+}
+
+.amcform-page-wrap.fields {
+    gap: @2;
+}
+.amform-layout-two:not(.editing) {
+    max-width: ~"calc(50% - @{1})";
+}
